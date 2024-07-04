@@ -88,21 +88,25 @@ Ensure you have the `Electric_Vehicle_Population_Data.csv` file in the same dire
 #### Market Share by Brand
 
 ![EV Market Share by Brand](ev_data_analysis/images/ev_market_share_by_brand.png)
+
 *Figure: Tesla has the largest market share among electric vehicle brands, with around 80,000 electric vehicles. Although Chevrolet and Nissan follow, each has only around 15,000 electric vehicles, reflecting that Tesla is the market leader in the electric vehicle industry. *
 
 #### Distribution by City
 
 ![EV Distribution by City](ev_data_analysis/images/ev_growth_by_city.png)
+
 *Figure: Seattle has the highest number of registered electric vehicles among cities, with Bellevue and Redmond following. These three cities are located in Washington State, reflecting the higher popularity of electric vehicles in this state. *
 
 #### Electric Range Distribution
 
 ![EV Range Distribution](ev_data_analysis/images/ev_electric_range_distribution.png)
-*Figure: The electric range determines how many miles an electric vehicle can travel before needing a recharge. From the distribution of electric vehicle ranges, most vehicles have a range between 20 and 80 miles. There are only a few vehicles with a high electric range, indicating that a range of 20 to 80 miles meets the needs of most customers.*
+
+*Figure: The electric range determines how many miles an electric vehicle can travel before needing a recharge. From the distribution of electric vehicle ranges, most vehicles have a range between 20 and 80 miles. There are only a few vehicles with a high electric range, indicating that a range of 20 to 80 miles meets the needs of most customers. *
 
 #### Future Predictions
 
 ![EV Future Predictions](ev_data_analysis/images/ev_growth_prediction.png)
+
 *Figure: The growth in the number of electric vehicles is increasing. Although the number in 2024 has significantly dropped, it is believed that the record is incomplete. The number of electric vehicle adoptions is expected to continue increasing in the next five years. *
 
 
