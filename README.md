@@ -81,27 +81,27 @@ Ensure you have the `Electric_Vehicle_Population_Data.csv` file in the same dire
 
 #### Growth of Electric Vehicles by Year
 
-![EV Growth by Year](ev_data_analysis/images/ev_growth_by_year.png)
+[EV Growth by Year](ev_data_analysis/images/ev_growth_by_year.png)
 *Figure: The number of electric vehicles has been increasing steadily year over year.*
 
 #### Market Share by Brand
 
-![EV Market Share by Brand](ev_data_analysis/images/ev_market_share_by_brand.png)
+[EV Market Share by Brand](ev_data_analysis/images/ev_market_share_by_brand.png)
 *Figure: Tesla has the largest market share among electric vehicle brands.*
 
 #### Distribution by City
 
-![EV Distribution by City](ev_data_analysis/images/ev_growth_by_city.png)
+[EV Distribution by City](ev_data_analysis/images/ev_growth_by_city.png)
 *Figure: Seattle has the highest number of registered electric vehicles among cities.*
 
 #### Electric Range Distribution
 
-![EV Range Distribution](ev_data_analysis/images/ev_electric_range_distribution.png)
+[EV Range Distribution](ev_data_analysis/images/ev_electric_range_distribution.png)
 *Figure: Distribution of electric vehicle ranges, with most vehicles having a range between 100 and 300 miles.*
 
 #### Future Predictions
 
-![EV Future Predictions](ev_data_analysis/images/ev_growth_prediction.png)
+[EV Future Predictions](ev_data_analysis/images/ev_growth_prediction.png)
 *Figure: Predicted growth in the number of electric vehicles over the next five years.*
 
 
