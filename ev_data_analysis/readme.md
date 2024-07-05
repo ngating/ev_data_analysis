@@ -81,28 +81,33 @@ Ensure you have the `Electric_Vehicle_Population_Data.csv` file in the same dire
 
 #### Growth of Electric Vehicles by Year
 
-[EV Growth by Year](ev_data_analysis/images/ev_growth_by_year.png)
-*Figure: The number of electric vehicles has been increasing steadily year over year.*
+![EV Growth by Year](ev_data_analysis/images/ev_growth_by_year.png)
+
+*Figure: The number of electric vehicles has been increasing steadily year over year. It has sharply increased in the 2020s from 10,000 to 60,000. *
 
 #### Market Share by Brand
 
-[EV Market Share by Brand](ev_data_analysis/images/ev_market_share_by_brand.png)
-*Figure: Tesla has the largest market share among electric vehicle brands.*
+![EV Market Share by Brand](ev_data_analysis/images/ev_market_share_by_brand.png)
+
+*Figure: Tesla has the largest market share among electric vehicle brands, with around 80,000 electric vehicles. Although Chevrolet and Nissan follow, each has only around 15,000 electric vehicles, reflecting that Tesla is the market leader in the electric vehicle industry. *
 
 #### Distribution by City
 
-[EV Distribution by City](ev_data_analysis/images/ev_growth_by_city.png)
-*Figure: Seattle has the highest number of registered electric vehicles among cities.*
+![EV Distribution by City](ev_data_analysis/images/ev_growth_by_city.png)
+
+*Figure: Seattle has the highest number of registered electric vehicles among cities, with Bellevue and Redmond following. These three cities are located in Washington State, reflecting the higher popularity of electric vehicles in this state. *
 
 #### Electric Range Distribution
 
-[EV Range Distribution](ev_data_analysis/images/ev_electric_range_distribution.png)
-*Figure: Distribution of electric vehicle ranges, with most vehicles having a range between 100 and 300 miles.*
+![EV Range Distribution](ev_data_analysis/images/ev_electric_range_distribution.png)
+
+*Figure: The electric range determines how many miles an electric vehicle can travel before needing a recharge. From the distribution of electric vehicle ranges, most vehicles have a range between 20 and 80 miles. There are only a few vehicles with a high electric range, indicating that a range of 20 to 80 miles meets the needs of most customers. *
 
 #### Future Predictions
 
-[EV Future Predictions](ev_data_analysis/images/ev_growth_prediction.png)
-*Figure: Predicted growth in the number of electric vehicles over the next five years.*
+![EV Future Predictions](ev_data_analysis/images/ev_growth_prediction.png)
+
+*Figure: The growth in the number of electric vehicles is increasing. Although the number in 2024 has significantly dropped, it is believed that the record is incomplete. The number of electric vehicle adoptions is expected to continue increasing in the next five years. *
 
 
 This README provides a clear overview of your project and its results without the need for a license.
