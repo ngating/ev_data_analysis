@@ -81,6 +81,34 @@ Ensure you have the `Electric_Vehicle_Population_Data.csv` file in the same dire
 
 #### Growth of Electric Vehicles by Year
 
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load dataset
+ev_data_clean = pd.read_csv("Electric_Vehicle_Population_Data.csv")
+
+# Count the number of EVs by model year
+model_year_counts = ev_data_clean['Model Year'].value_counts().sort_index()
+
+# Plot the EV growth trend
+ax = model_year_counts.plot(kind='line', marker='o', linestyle='-')
+
+# Add labels and title
+plt.title('The Adoption of Electric Vehicles by Year')
+plt.xlabel('Model Year')
+plt.ylabel('Number of Electric Vehicles')
+plt.grid(True)
+
+# Remove unnecessary spines for better visualization
+ax.spines[['right', 'top']].set_visible(False)
+
+# Save and show the plot
+plt.savefig('images/ev_growth_by_year.png')
+plt.show()
+plt.close()
+```
+
 ![EV Growth by Year](ev_data_analysis/images/ev_growth_by_year.png)
 
 *Figure: The number of electric vehicles has been increasing steadily year over year. It has sharply increased in the 2020s from 10,000 to 60,000. *
