@@ -233,7 +233,7 @@ print(f'R-squared:{r2}')
 
 ![EV Future Predictions](ev_data_analysis/images/ev_growth_prediction.png)
 
-*Figure: The growth in the number of electric vehicles is increasing. Although the number in 2024 has significantly dropped, it is believed that the record is incomplete. The number of electric vehicle adoptions is expected to continue increasing in the next five years. *
+*Figure: The growth in the number of electric vehicles is increasing. Although the number in 2024 has significantly dropped, this may be due to incomplete records. The number of electric vehicle adoptions is expected to continue increasing in the next five years. *
 
 
 This README provides a clear overview of your project and its results without the need for a license.
