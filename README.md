@@ -86,25 +86,25 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load dataset
-ev_data_clean = pd.read_csv("Electric_Vehicle_Population_Data.csv")
+ev_data_clean = pd.read_csv("Electric_Vehicle_Population_Data.csv").dropna(subset=['Model Year'])
 
-# Count the number of EVs by model year
+# Count EVs by model year
 model_year_counts = ev_data_clean['Model Year'].value_counts().sort_index()
 
-# Plot the EV growth trend
-ax = model_year_counts.plot(kind='line', marker='o', linestyle='-')
+# Plot EV growth trend
+ax = model_year_counts.plot(kind='line', marker='o', linestyle='-', color='blue')
 
-# Add labels and title
+# Customize plot appearance
 plt.title('The Adoption of Electric Vehicles by Year')
 plt.xlabel('Model Year')
-plt.ylabel('Number of Electric Vehicles')
-plt.grid(True)
+plt.ylabel('Frequency')
+plt.tight_layout()
 
-# Remove unnecessary spines for better visualization
+# Remove unnecessary spines for a cleaner look
 ax.spines[['right', 'top']].set_visible(False)
 
-# Save and show the plot
-plt.savefig('images/ev_growth_by_year.png')
+# Save and display the plot
+plt.savefig("images/ev_growth_by_year.png")
 plt.show()
 plt.close()
 ```
@@ -115,11 +115,49 @@ plt.close()
 
 #### Market Share by Brand
 
+```python
+Make = 'TESLA'
+highlight_color = 'red'
+non_highlight_color = 'skyblue'
+Make_counts = ev_data_clean['Make'].value_counts().head(10).sort_values(ascending=True)
+colors = [highlight_color if make == 'TESLA' else non_highlight_color for make in Make_counts.index]
+
+ax = Make_counts.plot(kind='barh', color=colors)
+
+plt.title('Market Share of the Electric Vehicle by Brands')
+plt.xlabel('Frequency')
+plt.ylabel('Make')
+plt.tight_layout()
+ax.spines[['right', 'top']].set_visible(False)
+plt.savefig('images/ev_market_share_by_brand.png')
+plt.show()
+plt.close()
+```
+
 ![EV Market Share by Brand](ev_data_analysis/images/ev_market_share_by_brand.png)
 
 *Figure: Tesla has the largest market share among electric vehicle brands, with around 80,000 electric vehicles. Although Chevrolet and Nissan follow, each has only around 15,000 electric vehicles, reflecting that Tesla is the market leader in the electric vehicle industry. *
 
 #### Distribution by City
+
+```python
+Make = 'Seattle'
+highlight_color = 'red'
+non_highlight_color = 'skyblue'
+
+City_counts = ev_data_clean['City'].value_counts().head(20)
+colors = [highlight_color if make == 'Seattle' else non_highlight_color for make in City_counts.index]
+
+ax = City_counts.plot(kind='bar',color=colors)
+plt.title('The Adoption of Electric Vehicle among City')
+plt.xlabel('City')
+plt.ylabel('Frequency')
+ax.spines [['right', 'top']].set_visible(False)
+plt.tight_layout()
+plt.savefig('images/ev_growth_by_city.png')
+plt.show()
+plt.close()
+```
 
 ![EV Distribution by City](ev_data_analysis/images/ev_growth_by_city.png)
 
@@ -127,11 +165,71 @@ plt.close()
 
 #### Electric Range Distribution
 
+```python
+ax = sns.histplot(ev_data_clean['Electric Range'],kde=True, bins=20, color= 'skyblue') 
+
+plt.title('The Electric Range Distribution of Electric Vehicle')
+plt.xlabel('Electric Range')
+plt.ylabel('Frequency')
+ax.spines [['right', 'top']].set_visible(False)
+plt.axvline(ev_data_clean['Electric Range'].mean(), color='red', linestyle='--', label=f'Mean Range: {ev_data_clean["Electric Range"].mean():.2f} miles')
+plt.tight_layout()
+plt.savefig('images/ev_electric_range_distribution.png')
+plt.show()
+plt.close()
+```
+
 ![EV Range Distribution](ev_data_analysis/images/ev_electric_range_distribution.png)
 
 *Figure: The electric range determines how many miles an electric vehicle can travel before needing a recharge. From the distribution of electric vehicle ranges, most vehicles have a range between 20 and 80 miles. There are only a few vehicles with a high electric range, indicating that a range of 20 to 80 miles meets the needs of most customers. *
 
 #### Future Predictions
+
+```python
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+```
+
+```python
+# Split the data into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Train the linear regression model
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# Predict future values (e.g., next 5 years)
+future_years = np.arange(2024, 2029).reshape(-1, 1)
+predictions = model.predict(future_years)
+
+# Calculate the predicted values for the training and test data
+y_train_pred = model.predict(X_train)
+y_test_pred = model.predict(X_test)
+
+# Plot the results
+plt.figure(figsize=(10, 6))
+plt.scatter(model_year_series['Model Year'], model_year_series['Count'], label='Observed', color='blue')
+plt.plot(X_train, y_train_pred, label='Train Prediction', color='green')
+plt.plot(X_test, y_test_pred, label='Test Prediction', color='orange')
+plt.plot(future_years, predictions, label='Future Predictions', color='red', linestyle='dashed')
+plt.title('Predict the Adoption of Electric Vehicle in 2024 - 2029')
+plt.xlabel('Model Year')
+plt.ylabel('Frequency')
+plt.legend()
+plt.tight_layout()
+plt.savefig('images/ev_growth_prediction.png')
+plt.show()
+plt.close()
+
+# Print the mean squared error and r-squared for model evaluation
+mse_train = mean_squared_error(y_train, y_train_pred)
+mse_test = mean_squared_error(y_test, y_test_pred)
+r2 = r2_score(y_test, y_test_pred)
+print(f'Mean Squared Error (Train): {mse_train}')
+print(f'Mean Squared Error (Test): {mse_test}')
+print(f'R-squared:{r2}') 
+```
 
 ![EV Future Predictions](ev_data_analysis/images/ev_growth_prediction.png)
 
